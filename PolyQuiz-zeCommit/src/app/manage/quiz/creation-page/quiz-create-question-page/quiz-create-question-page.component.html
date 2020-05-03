@@ -1,0 +1,60 @@
+<app-navbar title="Création d'un quiz" [trouble]="trouble" [path]="questId?'../..':'..'"></app-navbar>
+<div class="container">
+  <form [formGroup]="questionForm" *ngIf="quizId">
+    <div class="form-group has-error">
+      <label for="text">
+        Texte <br>
+        <input class="input-custom" type="text" id="name" [formControlName]="'text'" maxlength="45">
+      </label>
+      <label for="image">
+        Image <br>
+        <app-image-uploader (cardImageBase64Event)="receiveImg($event)" [imageLoad]="imageQuestion">
+        </app-image-uploader>
+      </label>
+      <p *ngIf="invalidQuestion()" id="text" class="help-block">champ vide *.</p>
+
+    </div>
+    <form [formGroup]="questionType">
+      <div class="control">
+        <label for="texte">Texte
+
+          <input type="radio" id="text" [formControlName]="'type'" [formTarget] [value]="true">
+        </label>
+        <label for="image">Image
+
+          <input type="radio" id="image" [formControlName]="'type'" [value]="false">
+        </label>
+      </div>
+    </form>
+    <div class="answers">
+      <div formArrayName="answers" *ngFor="let elm of formData.controls; let i = index">
+        <div class="form-group has-error" [formGroupName]="i">
+          <label for="titre">
+            Réponse {{ i+1 }} <br />
+            <input *ngIf="questionType.value.type" type="text" id="text" [formControlName]="'text'" maxlength="30">
+
+            <app-image-uploader *ngIf="!questionType.value.type" (cardImageBase64Event)="receiveImgAnsw($event,i)"
+              [imageLoad]="imageAnswers[i]"></app-image-uploader>
+
+          </label>
+          <label for="isCorrect">
+            <input type="checkbox" id="isCorrect" [formControlName]="'isCorrect'">
+            Réponse vraie
+          </label>
+          <p *ngIf="questionType.value.type&&invalidAnswer(i)" id="text" class="help-block">champ vide *.</p>
+          <p *ngIf="!questionType.value.type&&invalidImage(i)" id="image" class="help-block">image vide *.</p>
+
+        </div>
+      </div>
+    </div>
+    <button *ngIf="!questionType.value.type"
+      [class]="!(questionForm.valid&&controlRightAnswer()&&controlImage())? 'btn btn-danger':'btn btn-success'"
+      [disabled]="!(questionForm.valid&&controlRightAnswer()&&controlImage())"
+      (click)="question? changeQuestion():addQuestion();">Valider</button>
+    <button *ngIf="questionType.value.type"
+      [class]="!(questionForm.valid&&controlRightAnswer()&&controlText())? 'btn btn-danger':'btn btn-success'"
+      [disabled]="!(questionForm.valid&&controlRightAnswer()&&controlText())"
+      (click)="question? changeQuestion():addQuestion();">Valider</button>
+  </form>
+  <p *ngIf="!controlRightAnswer()" id="text" class="help-block">Cocher au moins une bonne réponse</p>
+</div>

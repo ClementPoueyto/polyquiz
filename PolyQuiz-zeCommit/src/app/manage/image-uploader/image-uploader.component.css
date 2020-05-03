@@ -1,0 +1,55 @@
+.image-wrap {
+    padding: 10px;
+    border: solid 1px #e0e0e0;
+    display: inline-block;
+    width:80px;
+    height:80px;
+}
+
+.img-space {
+  border: dashed 1px #d3d3d3;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  width:90px;
+  height:90px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.img-space img {
+    display: block;
+    width:80px;
+    height:80px;
+    cursor: pointer;
+}
+
+.fileInputProfileWrap {
+  width:80px;
+  height:80px;
+
+}
+
+.fileInputProfile {
+    position: absolute;
+    width:80px;
+    height:80px;
+    opacity: 0;
+    cursor: pointer;
+}
+.fileInputProfile[disabled] + .img-space{
+    pointer-events: none;
+    cursor: not-allowed!important;
+}
+
+.image-uploader{
+  width:90px;
+  height:90px;
+  margin:10px;
+}
+
+
+
+

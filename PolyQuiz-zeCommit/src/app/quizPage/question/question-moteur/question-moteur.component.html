@@ -1,0 +1,47 @@
+<div class="main" (click)="addClick()">
+
+  <div *ngIf="question.image" class="question" >
+
+    <img *ngIf="question.image" src={{question.image}} alt="image">
+
+    <div class="questionText2">{{question.text}}</div>
+  </div>
+  <div *ngIf="!question.image" class="questionOnly">
+    <div class="questionText2">{{question.text}}</div>
+  </div>
+
+
+  <div *ngIf="question.image" class="answers">
+    <div *ngIf="!question.answersAreText" class="answersImg">
+      <div class="col-md-6" *ngFor="let answer of question.answers">
+        <img appHighlight *ngIf="answer.image" src={{answer.image}} alt="" class="answer"
+          (click)="openDialogZoom(answer, false)">
+      </div>
+    </div>
+    <div *ngIf="question.answersAreText" class="answersTxt1">
+      <div class="col-md-6" *ngFor="let answer of question.answers">
+        <button appHighlight class="btn answer" (click)="openDialogZoom(answer, true)">
+          {{answer.text}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="!question.image" class="answersBig">
+    <div *ngIf="!question.answersAreText" class="answersBigImg">
+      <div class="col-md-6" *ngFor="let answer of question.answers">
+        <img appHighlight *ngIf="answer.image" src={{answer.image}} alt="" class="answer"
+          (click)="openDialogZoom(answer, false)">
+      </div>
+    </div>
+    <div *ngIf="question.answersAreText" class="answersTxt1">
+      <div class="col-md-6" *ngFor="let answer of question.answers">
+        <button appHighlight class="answer" (click)="openDialogZoom(answer, true)">
+          {{answer.text}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

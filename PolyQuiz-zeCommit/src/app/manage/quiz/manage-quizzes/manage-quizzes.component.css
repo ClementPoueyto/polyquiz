@@ -1,0 +1,72 @@
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #cfebf0;
+  height: 100%;
+}
+button{
+  width:200px;
+  height:50px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.container{
+align-items: flex-start;
+justify-content: flex-start;
+height: 89%;
+width: 100%;
+}
+
+.quizBox {
+margin : 10px 0px 0px 10px;
+
+}
+
+.quizzes{
+background-color: antiquewhite;
+height: 100%;
+padding-left: 0px;
+}
+
+.quizlist {
+max-height: 100%;
+overflow: auto;
+scrollbar-width: thin;
+display: flex;
+width: 100%;
+flex-wrap: wrap;
+
+}
+
+
+.card {
+background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+cursor: pointer;
+}
+
+.cardTop {
+  width: 150px;
+  height: 150px;
+}
+
+.cardBot {
+  width: 150px;
+  height: 40px;
+}
+
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+p{
+text-align: center;
+font-size: 15px;
+}

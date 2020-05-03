@@ -1,0 +1,26 @@
+<app-navbar title="Gestion des quiz" [trouble]="trouble"></app-navbar>
+<div class="container">
+  <div class="menu col-md-3" appSizeBoxDirective [heightMax]="'100%'" [heightMin]="'45%'">
+    <app-filtre-quiz (filterName)="applyFilterName($event)" (filterTheme)="applyFilterTheme($event)"></app-filtre-quiz>
+    <br>
+    <button class="btn btn-primary" routerLink="create">Ajouter un quiz</button>
+  </div>
+  <div appSizeBoxDirective [heightMax]="'100%'" [heightMin]="'55%'" class="quizzes col-md-9">
+    <div class="quizlist" *ngIf="quizList">
+      <div *ngFor="let quiz of quizList">
+        <div class="quizBox">
+          <div (click)="openDialogDisplay(quiz)">
+            <div class="card">
+              <div class="cardTop">
+                <img class="card-img-top" src={{quiz.image}} alt="Card image cap">
+              </div>
+              <div class="cardBot">
+                <p>{{ quiz.name }}-{{ quiz.theme.name }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

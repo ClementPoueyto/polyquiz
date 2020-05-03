@@ -1,0 +1,9 @@
+<form [formGroup]="themeForm">
+    <label for="title">
+      Ajouter un theme <br>
+      <input class="input-custom" type="text" id="name" [formControlName]="'name'" >
+    </label>
+    <button type="submit" [class]="!themeForm.valid? 'btn btn-danger':'btn btn-success' " [disabled]="!themeForm.valid" (click)="addTheme()">Valider</button>
+
+</form>
+<app-image-uploader (cardImageBase64Event)="receiveImg($event)" [imageLoad]="loadImage"></app-image-uploader>

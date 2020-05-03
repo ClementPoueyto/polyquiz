@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="question">
+
+  <img *ngIf="question.image" src={{question.image}} alt="image">
+
+  <div class="questionText">{{question.text}}</div>
+</div>
+
+
+  <div class="answers">
+    <div *ngIf="!question.answersAreText" class="answersImg">
+      <div class="col-md-6" *ngFor="let answer of question.answers">
+        <img *ngIf="answer.image" src={{answer.image}} alt="" [style.visibility]="this.wrongAnswers.includes(answer)? 'hidden' : 'visible'" class="answer" (click)="nextQuestion(answer)">
+      </div>
+    </div>
+    <div *ngIf="question.answersAreText" class="answersTxt">
+      <div class="col-md-6" *ngFor="let answer of question.answers">
+        <button [style.visibility]="this.wrongAnswers.includes(answer)? 'hidden' : 'visible'" class="answer" (click)="nextQuestion(answer)">
+          {{answer.text}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+

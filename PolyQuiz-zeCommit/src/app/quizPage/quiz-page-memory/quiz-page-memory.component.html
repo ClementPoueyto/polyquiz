@@ -1,0 +1,21 @@
+<div *ngIf="!quizDone" class="menu">
+  <app-navbar-question *ngIf="profile&&quiz" [quiz]="quiz" [profile]="profile"></app-navbar-question>
+</div>
+<div *ngIf="!quizDone&&stats" class="row">
+  <div class="col-md-2 terminatebtn" *ngIf="!quizDone">
+    <button id="finish" class="btn btn-danger" (click)="openDialogTerminate()">Terminer le quiz</button>
+  </div>
+
+  <app-question-memory class="col-md-8 question" *ngIf="quiz&&!quizDone" [question]="questionList[index]"
+    (nextQ)="receiveQ($event)"></app-question-memory>
+
+  <div class="col-md-2 btnTree">
+    <div class="questions" *ngFor="let question of questionList; let n=index">
+      <button [disabled]="this.stats.questionsDone.includes(question.id)"
+        [class]="this.index==n?'btn btn-info':this.stats.questionsDone.includes(question.id)?'btn btn-success' : 'btn btn-primary'"
+        (click)="skipQ(n)">Q{{n+1}}</button>
+    </div>
+  </div>
+</div>
+
+<app-end-quiz *ngIf="quizDone" [stats]="stats" [quiz]="quiz"></app-end-quiz>

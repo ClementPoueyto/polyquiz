@@ -1,0 +1,29 @@
+.end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2em;
+    width:100%;
+}
+.results{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2em;
+
+}
+#resume {
+    width: 90%;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border:solid 1px black;
+    margin : 5px;
+    text-align: center;
+}
+
+.page-content{
+  width:100%;
+}

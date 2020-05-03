@@ -1,0 +1,50 @@
+<app-navbar title="Modification du quiz" path="../.." [trouble]="trouble"></app-navbar>
+
+<div *ngIf="quiz" class="container">
+  <div class="col-md-6 info">
+    <form [formGroup]="quizForm">
+      <label for="title">
+        Titre du quiz <br>
+        <input class="input-custom" type="text" id="name" [formControlName]="'name'" maxlength="25">
+      </label>
+      <br>
+      <button class="btn btn-info" (click)="openTheme()">Ajouter un thème</button>
+
+      <label for="Theme">
+        <br />
+        Theme <br>
+        <select name="theme" id="theme" [formControlName]="'themeId'" required>
+          <option *ngFor="let theme of themes" [value]="theme.id">{{theme.name}}</option>
+        </select>
+      </label>
+    </form>
+    <app-image-uploader (cardImageBase64Event)="receiveImg($event)" [imageLoad]="image"></app-image-uploader>
+    <button class="answer btn-success btn" (click)="sendQuiz()">Valider le quiz</button>
+
+  </div>
+
+  <div class="questions col-md-6">
+    <h2>Gestion des questions</h2>
+    <button id="addquest" class="btn btn-info" routerLink="add-question">Ajouter une question</button>
+    <div class="list">
+      <div class="question" *ngFor="let question of quiz.questions">
+        <div class="col-md-6">
+          <button class="btn quest" (click)="openDialog(question)">
+            <p>{{question.text}}</p>
+          </button>
+        </div>
+          <div class="col-md-3">
+          <button class="btn btn-primary" (click)="edit(question)">
+            modifier
+          </button>
+        </div>
+      <div class="col-md-3">
+          <button class="btn btn-danger" (click)="delete(question)">
+            supprimer
+          </button>
+        </div>
+        </div>
+    </div>
+  </div>
+
+</div>

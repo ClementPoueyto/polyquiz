@@ -1,0 +1,51 @@
+<app-navbar title="Modifier un profil" path="../.." [trouble]="trouble"></app-navbar>
+
+<div *ngIf="profile" class="page-content">
+    <form [formGroup]="profileForm">
+        <div class="row">
+
+            <label for="firstName">
+                Prénom
+                <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'" maxlength="20" required>
+            </label>
+
+            <label for="lastName">
+                Nom
+                <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'" maxlength="20" required>
+            </label>
+
+        </div>
+
+        <div class=row>
+            <label for="birthDate">
+                <br />date de naissance<br>
+                <input class="input-custom" type="date" id="birthDate" [formControlName]="'birthDate'">
+            </label>
+        </div>
+        <div class="row">
+
+            <br>
+            <label for="gender">
+                <br />Sexe<br>
+                <select name="gender" id="gender" [formControlName]="'gender'" required>
+                    <option [value]="'Femme'">Femme</option>
+                    <option [value]="'Homme'">Homme</option>
+                </select>
+            </label>
+
+
+            <br>
+
+            <label for="Handicap">
+                <br />Handicap<br>
+                <select name="trouble" id="troube" [formControlName]="'trouble'" required>
+                    <option *ngFor="let trouble of HANDICAP_LIST" [value]="trouble">{{trouble}}</option>
+                </select>
+            </label>
+        </div>
+        <app-image-uploader (cardImageBase64Event)="receiveImg($event)" [imageLoad]="image"></app-image-uploader>
+        <br />
+        <button type="submit" [disabled]="!profileForm.valid"
+            [class]="!profileForm.valid? 'btn btn-danger':'btn btn-success' " (click)="validProfile()">Modifier</button>
+    </form>
+</div>

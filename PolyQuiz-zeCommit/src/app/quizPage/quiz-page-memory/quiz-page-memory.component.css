@@ -1,0 +1,56 @@
+
+.btn {
+    margin: 10px;
+    width:90px;
+    justify-content: center;
+    font-size: 20px;
+
+  }
+.button{
+    border: solid 5px;
+
+  }
+
+.app-question-memory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    height: 90%;
+  }
+
+  #finish {
+    width: auto;
+    height: 100px;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .terminatebtn{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+  }
+  .numQuest {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+  }
+
+.btnTree{
+  overflow: auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

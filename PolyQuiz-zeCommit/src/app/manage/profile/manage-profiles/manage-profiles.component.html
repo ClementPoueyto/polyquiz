@@ -1,0 +1,25 @@
+<app-navbar title="Gestion des profils" [trouble]="trouble"></app-navbar>
+<div class="container">
+  <div class="menu col-md-3" appSizeBoxDirective [heightMax]="'100%'" [heightMin]="'45%'">
+    <p>Rechercher par nom</p>
+    <input #box (keyup)="onKey(box.value)">
+
+    <button class="btn btn-primary" routerLink="create">Ajouter un profil</button>
+  </div>
+  <div appSizeBoxDirective [heightMax]="'100%'" [heightMin]="'55%'" class="profiles  col-md-9">
+    <div class="profileList " *ngIf="profileList">
+      <div *ngFor="let profile of profileList">
+        <div class="profileBox" (click)="openDialog(profile)">
+          <div class="card">
+            <div class="cardTop">
+              <img class="card-img-top" src={{profile.image}} alt="Card image cap">
+            </div>
+            <div class="cardBot">
+              <p>{{ profile.firstName }} {{ profile.lastName }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

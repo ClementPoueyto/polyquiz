@@ -1,0 +1,128 @@
+.main {
+  background-color: rgba(188, 216, 222, 0.97);
+  width: 100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answers{
+  width: 90%;
+  height: 45%;
+
+}
+
+.answers img{
+  background-color: white;
+
+  object-fit: contain;
+
+}
+.answersBig{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 70%;
+}
+
+
+button {
+  width:80%;
+  height:80%;
+  font-size: 1em;
+}
+
+.question{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:50%;
+}
+
+.questionOnly{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height: 30%;
+}
+
+.questionText1{
+  text-align: center;
+  font-size: 150%;
+  padding:10px;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.questionText2{
+  text-align: center;
+  font-size: 250%;
+  padding:10px;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.questionText3{
+  text-align: center;
+  font-size: 350%;
+  padding:10px;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.question img{
+  height: 60%;
+  max-width: 100%;
+  object-fit: cover;
+
+}
+
+
+.answersBigImg > .col-md-6 > img {
+  object-fit: contain;
+  width:80%;
+  height:80%;
+}
+
+.answersTxt1{
+  font-size: 2em;
+  height: 100%;
+  width: 100%;
+}
+
+.answer{
+  border: solid 10px white;
+  cursor: pointer;
+  width: 90%;
+  height: 90%;
+}
+
+.answersImg{
+  height: 100%;
+  width: 100%;
+}
+
+.answersBigImg{
+  height: 100%;
+  width: 100%;
+}
+
+.col-md-6 {
+  height: 50%;
+  padding: 0px;
+  margin:0px;
+}
+
+

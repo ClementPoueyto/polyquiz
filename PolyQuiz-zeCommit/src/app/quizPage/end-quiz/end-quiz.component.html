@@ -1,0 +1,38 @@
+<app-navbar title="Fin du quiz" [trouble]="trouble"></app-navbar>
+<div class="page-content">
+  <div class="end">
+    <div>
+      <p>Vous avez répondu à {{stats.questionsDone.length}} question{{stats.questionsDone.length>1?"s":""}}</p>
+    </div>
+
+    <div>
+      <p>Vous avez {{stats.nbRightAnswers}} bonne{{stats.nbRightAnswers>1?"s":""}}
+        réponse{{stats.nbRightAnswers>1?"s":""}}</p>
+    </div>
+    <br>
+    <div>
+      <p>Résumé des questions: </p>
+    </div>
+  </div>
+
+  <div class=" end">
+    <div id="resume" *ngFor="let question of quiz.questions">
+      <p> {{question.text}}</p>
+      <img *ngIf="question.image" src={{question.image}} alt="image" >
+
+      <div *ngFor="let answ of question.answers">
+        <div *ngIf="answ.isCorrect">
+          <p>La réponse correcte est : </p>
+          <img *ngIf="!question.answersAreText" src={{answ.image}} alt="réponse">
+          <p *ngIf="question.answersAreText"> {{answ.text}}</p>
+        </div>
+
+      </div>
+      <p [style.color]="stats.resume.get(question.id)?'green':'black'" class="result">Votre réponse :
+        {{stats.resume.get(question.id)?'Correcte':'Fausse'}}</p>
+    </div>
+
+  </div>
+
+
+</div>

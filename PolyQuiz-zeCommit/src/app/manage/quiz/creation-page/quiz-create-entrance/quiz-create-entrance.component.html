@@ -1,0 +1,42 @@
+<div *ngIf="themes" class="container">
+  <div class="col-md-6 quiz">
+    <form [formGroup]="quizForm">
+      <label for="title">
+        Titre du quiz <br>
+        <input class="input-custom" type="text" id="name" [formControlName]="'name'" ngModel maxlength="25">
+      </label>
+      <br>
+      <label for="Theme">
+        <br />
+        Theme <br>
+        <select name="theme" id="theme" [formControlName]="'themeId'" required>
+          <option *ngFor="let theme of themes" [value]="theme.id">{{theme.name}}</option>
+        </select>
+      </label>
+      <br />
+      <app-image-uploader (cardImageBase64Event)="receiveImg($event)"></app-image-uploader>
+      <br />
+      <button id="submit" type="submit" [class]="!(quizForm.valid) ? 'btn btn-danger':'btn btn-success' "
+        [disabled]="!(quizForm.valid)" (click)="addQuiz()">Suivant</button>
+    </form>
+  </div>
+  <div class="col-md-6 gestiontheme">
+    <div class=" themes">
+      <h2>Gestion des thèmes :</h2>
+      <button class="btn btn-info" (click)="openDialog()">Ajouter un thème</button>
+      <div class="list">
+        <div class="compolist" *ngFor="let theme of themes">
+          <div class="compostructure" *ngIf="theme.id!=0">
+            <p class="col-md-6">{{theme.name}}</p>
+            <div class="col-md-3">
+              <button class="btn btn-primary" (click)="editTheme(theme)"> modifier </button>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-danger" (click)="deleteTheme(theme)"> supprimer </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
