@@ -1,0 +1,18 @@
+<div class="filtres">
+  <p id="title">Rechercher par </p>
+  <label for="Theme">
+    <br/>
+    Nom :<br>
+  <input #box (keyup)="onKey(box.value)">
+  </label>
+  <form *ngIf="themes" [formGroup]="quizFilterForm">
+    <label for="Theme">
+      <br/>
+      Theme :<br>
+      <select (change)="onItemChange()" name="theme" id="theme" [formControlName]="'themeId'" required>
+          <option *ngFor="let theme of themes" [value]="theme.id">{{theme.name}}</option>
+      </select>
+    </label>
+  </form>
+  </div>
+

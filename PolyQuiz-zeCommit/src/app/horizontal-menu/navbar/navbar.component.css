@@ -1,0 +1,43 @@
+
+.btn {
+  margin: 10px;
+  justify-content: center;
+  font-size: 1.5vw;
+}
+
+.trouble{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar{
+  font-size: 25px;
+  height: 9%;
+  background-color: lightskyblue;
+  margin-bottom: 0.5%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vw;
+  width: 100%;
+}
+
+.container{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+#navigateBtn{
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+
+}

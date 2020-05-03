@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="container">
+    <div class="col-md-3 col-sm-6  col-6">
+      <button type="button" class="btn btn-primary" (click)="openDialog('accueil')">Accueil</button>
+      <button type="button" class="btn btn-primary" (click)="openDialog('retour1')">Retour</button>
+    </div>
+
+    <h2 class="title col-md-7 col-sm-4  col-4">Thème : {{quiz.theme.name}} | Quiz : {{quiz.name}}</h2>
+
+    <div class="photo col-md-2 col-sm-2 col-2">
+      <img src={{profile.image}} alt="profile image">
+    </div>
+  </div>
+</div>

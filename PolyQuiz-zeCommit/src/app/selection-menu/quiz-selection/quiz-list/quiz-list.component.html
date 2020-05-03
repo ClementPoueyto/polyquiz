@@ -1,0 +1,8 @@
+<div class="main">
+    <div class="quiz" *ngFor="let quiz of quizList">
+        <div class="quizBox">
+          <app-quiz *ngIf="quiz.questions.length>0" [quiz]="quiz"></app-quiz>
+        </div>
+    </div>
+</div>
+

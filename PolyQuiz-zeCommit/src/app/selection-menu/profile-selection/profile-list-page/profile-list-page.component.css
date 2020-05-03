@@ -1,0 +1,49 @@
+.btn {
+    padding: 20px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.profileList{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+}
+.container{
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 89%;
+  width: 100%;
+}
+
+
+
+.profiles{
+  width:100%;
+  height:100%;
+  background-color: antiquewhite;
+}
+
+.col-md-3{
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:0px;
+  /* background-color: rgba(110, 155, 194, 0.986); */
+  background-color: lightgray;
+}
+
+
+
+
+

@@ -1,0 +1,14 @@
+<div class="navbar">
+  <div class="container">
+    <div id="navigateBtn" class="col-md-3 ">
+      <button *ngIf="displayHome" type="button" class="btn btn-primary" routerLink="">Accueil</button>
+      <button *ngIf="displayBack" type="button" class="btn btn-primary"  (click)="goBack()">Retour</button>
+    </div>
+    <h1 class="title col-md-7">
+            {{title}}
+    </h1>
+    <div class="trouble col-md-2">
+        {{trouble}}
+    </div>
+  </div>
+</div>
