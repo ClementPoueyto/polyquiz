@@ -1,0 +1,14 @@
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.quit{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    font-size: 25px;
+}

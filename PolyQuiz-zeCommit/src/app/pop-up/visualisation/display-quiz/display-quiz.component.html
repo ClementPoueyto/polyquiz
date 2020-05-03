@@ -1,0 +1,37 @@
+<div class="closebtn row">
+  <button class="btn btn-danger" (click)="close()"> fermer </button>
+</div>
+<div class='window'>
+  <div class="head">
+  <h1>Quiz : {{quiz.name}} - Thème : {{quiz.theme.name}}</h1>
+  <img alt="image quiz" *ngIf="quiz.image" src={{quiz.image}}>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary col-md-3" (click)="modify()">Modifier</button>
+    <button class="btn btn-danger col-md-3" (click)="openDialogDelete(quiz)">Supprimer</button>
+  </div>
+  <div class="liste">
+    <div class="question" *ngFor="let quest of quiz.questions">
+      <nav>
+        <div [class]="(display==quest.id) ? 'deroulant-show' : 'deroulant-hide'" (click)="actionDisplay(quest.id)">
+          <h2> Question : {{quest.text}} </h2>
+          <ul>
+            <div *ngIf="!quest.answersAreText" class="answersImg">
+              <div class="answer" *ngFor="let answer of quest.answers">
+                 <img alt="image reponse" [style.border-color]="answer.isCorrect? 'green':'red'" *ngIf="answer.image" src={{answer.image}}>
+              </div>
+            </div>
+            <div *ngIf="quest.answersAreText" class="answersTxt">
+              <div class='answer' *ngFor="let answer of quest.answers">
+                <p [style.color]="answer.isCorrect? 'green':'red'">
+                  - {{answer.text}}
+                </p>
+              </div>
+            </div>
+          </ul>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+</div>

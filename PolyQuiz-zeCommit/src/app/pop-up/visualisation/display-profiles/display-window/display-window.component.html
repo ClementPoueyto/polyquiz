@@ -1,0 +1,32 @@
+<div class="closebtn row">
+  <button class="btn btn-danger" (click)="close()"> fermer </button>
+</div>
+<div *ngIf="profile&&stat" class="profile">
+  <div class="detail">
+    <img src={{profile.image}} alt="Card image cap">
+    <div>
+      <h1>
+        {{profile.firstName}} {{profile.lastName}}
+      </h1>
+      <p *ngIf="profile.birthDate&&profile.birthDate.toString()!=''">
+        Date de naissance : {{profile.birthDate | date : "dd/MM/yyyy"}}
+      </p>
+      <p>
+        sexe : {{profile.gender}}
+      </p>
+      <p>
+        trouble : {{trouble}}
+      </p>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary col-md-3" (click)="modify()">Modifier</button>
+    <button class="btn btn-danger col-md-3" (click)="openDialogDelete(profile)">Supprimer</button>
+  </div>
+  <div *ngIf="stat.length>0" class="liste">
+    <div *ngFor="let history of stat.reverse()">
+      <app-display-stat [stat]="history" [display]="history===selectedStat" (click)="selectedStat=history">
+      </app-display-stat>
+    </div>
+  </div>
+</div>

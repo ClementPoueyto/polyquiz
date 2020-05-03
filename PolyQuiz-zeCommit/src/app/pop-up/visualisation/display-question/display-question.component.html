@@ -1,0 +1,6 @@
+<div class="container">
+<app-question-memory *ngIf="trouble=='Memoire'" [question]="question"></app-question-memory>
+<app-question-vue *ngIf="trouble=='Vue'" [question]="question"></app-question-vue>
+<app-question-moteur *ngIf="trouble=='Moteur'" [question]="question"></app-question-moteur>
+
+</div>

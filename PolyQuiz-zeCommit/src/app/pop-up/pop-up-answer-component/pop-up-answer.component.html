@@ -1,0 +1,12 @@
+<div class="container">
+<p *ngIf="currentAnswer">Bonne réponse ! </p>
+<p *ngIf="!currentAnswer">Mauvaise réponse... </p>
+
+<p *ngIf="completed">Bravo ! Vous avez terminé le quizz ! </p>
+
+<div class="quit">
+  <button *ngIf="!completed" type="button" class="btn btn-success" (click)="close()">Question Suivante</button>
+  <button *ngIf="completed" type="button" class="btn btn-success" (click)="close()">Voir le score</button>
+
+</div>
+</div>

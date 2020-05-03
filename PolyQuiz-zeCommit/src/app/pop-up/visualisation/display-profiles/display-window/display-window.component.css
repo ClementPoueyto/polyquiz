@@ -1,0 +1,43 @@
+img{
+  width: auto;
+  height: auto;
+  max-width: 30%;
+  max-height: 30%;
+
+}
+p{
+  text-align: center;
+  font-size: 20px;
+}
+h1{
+  text-align: center;
+}
+.closebtn{
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.liste{
+  width:100%;
+  max-height: 45%;
+}
+.detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons{
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.buttons > button{
+  height: 80px;
+  margin: 3%;
+}
+

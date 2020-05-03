@@ -1,0 +1,17 @@
+<div class="container" (click)="addClick()">
+  <div class="col-sm-12 col-md-3 buttons">
+    <button appHighlight *ngIf="answer" class="btn btn-danger" type="button" (click)="validate=false;closeForAnswer();">Annuler la réponse</button>
+  </div>
+  <div class="col-sm-6 col-md-6 answer">
+    <div class="confirm">Êtes-vous certain(e) de choisir la réponse :</div>
+      <div *ngIf="!isText" class="image">
+          <img alt="image réponse non chargée" [src]="img" />
+      </div>
+      <div *ngIf="isText" class="text">
+          <p>{{answer.text}}</p>
+      </div>
+  </div>
+  <div class="col-sm-12 col-md-3 buttons">
+      <button appHighlight *ngIf="answer" class="btn btn-success" type="button" (click)="validate=true;closeForAnswer();">Valider la réponse</button>
+  </div>
+</div>

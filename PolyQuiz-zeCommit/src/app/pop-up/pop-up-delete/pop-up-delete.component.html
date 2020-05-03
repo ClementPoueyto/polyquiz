@@ -1,0 +1,8 @@
+<p *ngIf="quizToDelete">Voulez-vous vraiment supprimer le quiz : {{quizToDelete.name}} ?</p>
+<p *ngIf="profileToDelete">Voulez-vous vraiment supprimer le profil : {{profileToDelete.firstName}} {{profileToDelete.lastName}} ?</p>
+<p *ngIf="themeToDelete">Voulez-vous vraiment supprimer le thème : {{themeToDelete.name}} ?</p>
+<br>
+<div class="quit">
+    <button type="button" class="btn btn-danger" (click)="action()">Supprimer</button>
+    <button type="button" class="btn btn-primary" (click)="close()">Annuler</button>
+</div>

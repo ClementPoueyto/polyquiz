@@ -1,0 +1,30 @@
+.container{
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+p{
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  font-size: 3vw;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quit{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button{
+  font-size: 2vw;
+  width: 30%;
+  height: 50%;
+}

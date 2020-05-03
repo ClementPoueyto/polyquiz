@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="col-sm-8 col-md-10 answer">
+        <div *ngIf="!isText" class="image">
+            <img alt="image réponse non chargée" [src]="img" />
+        </div>
+        <div *ngIf="isText" class="text">
+            <p>{{answer.text}}</p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 buttons">
+        <button *ngIf="answer" class="btn btn-success" type="button" (click)="validate=true;closeForAnswer();">Valider la réponse</button>
+        <button *ngIf="answer" class="btn btn-danger" type="button" (click)="validate=false;closeForAnswer();">Annuler la réponse</button>
+        <button *ngIf="!answer" [style.height]="'50%'" class="btn btn-danger" type="button" (click)="closeForQuestion();">Fermer</button>
+    </div>
+</div>

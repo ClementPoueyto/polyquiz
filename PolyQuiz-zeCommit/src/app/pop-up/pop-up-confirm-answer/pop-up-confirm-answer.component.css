@@ -1,0 +1,56 @@
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+
+}
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
+button{
+white-space: pre-line;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+  font-size: 2vw;
+  border: 5px solid white;
+}
+
+img{
+  object-fit: contain;
+}
+
+.text{
+  font-size: 3vw;
+  text-align: center;
+  width: 100%;
+  white-space: pre-line;
+
+}
+
+.confirm{
+font-size: 2vw;
+padding:10px 0px 10px 0px;
+}
+
+.answer{
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
