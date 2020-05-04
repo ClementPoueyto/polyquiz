@@ -14,7 +14,17 @@ module.exports = (cb) => {
   app.use(morgan('[:date[iso]] :method :url :status :response-time ms - :res[content-length]'))
   app.use('/api', api)
   app.get('/cool', (req, res) => res.send(cool()))
+  app.get('/times', (req, res) => res.send(showTimes()))
 
   app.use('*', (req, res) => res.status(404).end())
   const server = app.listen(process.env.PORT || 5000, () => cb && cb(server))
+}
+
+showTimes = () => {
+  let result = ''
+  const times = process.env.TIMES || 5
+  for (i = 0; i < times; i++) {
+    result += i + ' '
+  }
+  return result;
 }
